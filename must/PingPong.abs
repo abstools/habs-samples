@@ -1,0 +1,73 @@
+/*
+ * PingPong.abs -- PingPong example
+ *
+ */
+module PingPong;
+
+data PingMsg = Fine
+             | HelloPing 
+             | ByePing 
+             ;
+
+data PongMsg = NoMsg 
+         | Hello(Ping)
+         | HowAreYou
+         | ByePong
+         ;
+
+interface Ping {
+    Unit ping(PingMsg m);
+}
+
+interface Pong {
+    Unit hello(Ping ping);
+    Unit pong(PongMsg m);
+}
+
+class PingImpl(Pong pong) implements Ping {
+    Unit run(){
+      pong!hello(this); 
+      println("Ping: hello");
+    }
+
+    Unit ping(PingMsg msg){
+      PongMsg reply = case msg {
+         HelloPing => HowAreYou;
+         Fine => ByePong; 
+         ByePing => NoMsg;
+      };
+      
+      if (reply != NoMsg) {
+         Fut<Unit> fu = pong!pong(reply);
+         println(concatenate("Ping: ", toString(reply)));
+      	 fu.get;
+      }
+     }
+} 
+
+class PongImpl implements Pong {
+    Ping ping_obj;
+
+    Unit hello(Ping ping_obj) {
+       this.ping_obj = ping_obj;
+       ping_obj!ping(HelloPing);
+       println("Pong: hello, Ping, True");
+    }
+
+    Unit pong(PongMsg msg){
+       if (msg == HowAreYou) {
+           ping_obj!ping(Fine);
+           println("Pong: Fine");
+       }  
+       else {
+           ping_obj!ping(ByePing);
+           println("Pong: Bye, Ping, True");
+           }
+    } 
+
+}
+
+{
+    Pong pong = new PongImpl(); 
+    new PingImpl(pong); 
+}

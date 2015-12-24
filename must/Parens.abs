@@ -1,0 +1,11 @@
+module Parens;
+
+def Int f() = (3 + 4) * 5;
+def Int g() = 3 + 4 * 5;
+
+{
+  Int i = f();
+  println(toString(i == 35));
+  Int j = g();
+  println(toString(j == 23));
+}

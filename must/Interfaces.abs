@@ -1,0 +1,29 @@
+module Interfaces;
+
+interface Interf1 {
+	Int method1(Int n, Int m);
+}
+
+interface Interf2 extends Interf1 {
+	Unit method2(Bool b);
+	Bool method3(Int z, Interf1 k);
+}
+
+
+interface Interf3 extends Interf2, Interf1 {
+
+}
+
+interface Interf4 extends Interf1 {
+
+
+}
+
+{
+ Interf1 o1 = null;
+ Interf2 o2 = null;
+ Interf3 o3 = null;
+ Interf4 o4 = null;
+ List<Interf1> os = list[o1,o2,o3,o4];
+ println(toString(length(os) == 4));
+}

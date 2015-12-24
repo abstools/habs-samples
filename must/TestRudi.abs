@@ -1,0 +1,11 @@
+module TestRudi;
+
+def Int f() = let (Int s) = 3 in
+    case 3 {
+          s => s+1;
+          _ => 0;
+    };
+
+{
+  println(toString(f() == f()));
+}

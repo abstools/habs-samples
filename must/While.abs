@@ -1,0 +1,13 @@
+module While;
+
+{
+ Int j = 3;
+ Int i = 10;
+ Int k = 0;
+ while (j <= 10) {
+     j = j+1;
+     k = k + 1;
+ }
+println(toString(j == 11));
+println(toString(k == 8));
+}

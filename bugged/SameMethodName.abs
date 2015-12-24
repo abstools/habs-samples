@@ -1,0 +1,28 @@
+module SameNameMethod;
+
+interface I1 {
+    Unit m();
+}
+
+interface I2 {
+    Unit m();
+}
+
+class C1 implements I1 {
+    Unit m() {
+        }
+}
+
+class C2 implements I2 {
+    Unit m() {
+
+        }
+}
+
+
+{
+   I1 o1 = new C1();
+   I2 o2 = new C2();
+   o1 ! m();
+   o2 ! m();
+}     

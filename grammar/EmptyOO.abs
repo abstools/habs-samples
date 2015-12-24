@@ -1,0 +1,14 @@
+module EmptyOO;
+
+interface Interf1 {
+
+}
+
+class Cls implements Interf1 {
+
+}
+
+{
+ new Cls();
+ 
+}

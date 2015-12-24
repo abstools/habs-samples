@@ -1,0 +1,12 @@
+module While;
+
+// it is because of main exiting to early. -k (keep-alive) fixes this, or a full thread-group fix.
+
+
+{
+  Int i=3;
+  while (i>0) {
+      suspend;
+      println("mplo");
+  }
+}

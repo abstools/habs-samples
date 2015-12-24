@@ -1,0 +1,22 @@
+module AmbiguousUp;
+
+def Maybe<A> find<A,B>(List<Int> l, A v, B notNeeded) = Just(v);
+
+// problem with "up"-ing null and any object
+
+interface I {
+
+}
+class C implements I {
+
+}
+
+
+{
+ I o = new C();
+ List<Int> l = list[1,2,3,4];
+ Maybe<Int> x = find(l,3,null); // a2h: does not know where to "up" null to
+ Maybe<Int> y = find(l,2,o); // a2h: does not know where to "up" o to
+ println(toString(x));
+ println(toString(y));
+}

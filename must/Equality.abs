@@ -1,0 +1,42 @@
+module Equality;
+
+def Bool g(Int x, Int y) = x == y;
+
+def Bool h(I1 i1) = i1 == null;
+
+def Bool j() = True == False;
+
+interface I1 {
+
+}
+
+interface I2 extends I1 {
+
+}
+
+class C1 implements I2 {
+
+}
+
+class C2 implements I2 {
+
+}
+
+{
+  println(toString(3==3));
+  Int x = 4;
+  Int y = x;
+  println(toString(x==y));
+  // different classes
+  I2 o1 = new C1();
+  I2 o2 = new C2();
+  println(toString(o1!=o2));
+  // // same object, different interfaces
+  I1 o3 = o2;
+  println(toString(o2 == o3));
+
+  // shallow equality
+  I1 o4 = new C1();
+  I1 o5 = new C1();
+  println(toString(o4 != o5));
+}
