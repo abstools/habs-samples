@@ -1,4 +1,4 @@
-module SameNameMethod;
+module SameMethodName;
 
 interface I1 {
     Unit m();
