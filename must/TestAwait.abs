@@ -18,7 +18,9 @@ class C implements I {
 
 
 {
-    await True;
+    // `await True` and `await False` are permitted in abstools, although they do not contain anything observable
+    // in habs NOT permitted, but if necessary, this restriction can be easily lifted.
+    // await True; 
 
     I o = new local C();
 
