@@ -2,27 +2,27 @@ module PromiseSimple;
 
 {
 
- Promise<Int> p;
+ Fut<Int> p;
 
  p = pro_new;
 
- Bool before = p.pro_isempty;
+ Maybe<Int> before = p.pro_try;
 
- println(toString(before));
+ println(toString(before == Nothing));
 
  p.pro_give(3);
 
- Bool after = p.pro_isempty;
+ Maybe<Int> after = p.pro_try;
 
- println(toString(not(after)));
+ println(toString(not(after == Nothing)));
 
- Promise<Int> p' = p;
+ Fut<Int> p_ = p;
 
- println(toString(p'==p));
+ println(toString(p_==p));
 
- await p$;
+ await p?;
 
- Int x = p.pro_get;
+ Int x = p_.get;
 
  println(toString(x==3));
 }
