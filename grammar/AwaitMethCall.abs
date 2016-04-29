@@ -1,0 +1,9 @@
+module AwaitMethCall;
+
+class C {
+    Unit m() {
+      this.m();
+      this!m();
+      await this!m();
+    }
+}
