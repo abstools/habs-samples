@@ -1,14 +1,26 @@
 module EmptyOO;
 
+import Mplo.Interf2;
+
 interface Interf1 {
 
 }
 
-class Cls implements Interf1 {
+
+class Cls implements Interf1, Mplo.Interf2 {
 
 }
 
 {
  new Cls();
  
+}
+
+
+module Mplo;
+
+export Interf2;
+
+interface Interf2 {
+
 }

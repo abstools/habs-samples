@@ -3,7 +3,7 @@ module Module;
 import M4.h;
 
 {
-  println(toString(M4.h));
+  println(toString(M4.h()));
 }
 
 module M1;
