@@ -1,0 +1,31 @@
+// adapted from ABS manual
+
+module CaseStatement;
+
+def Bool contains<A>(List<A> list, A value) =
+case list {
+  Nil => False;
+  Cons(value, _) => True;
+  Cons(_, rest) => contains(rest, value);
+};
+
+
+def Bool isEmpty(String s) =
+case b {
+  "" => True;
+  _ => False;
+};
+
+{
+
+
+Pair<Int, Int> p = Pair(2, 3);
+Int x = 0;
+case p {
+  Pair(2, y) => { x = y; skip; }
+  Pair(4, y) => x = -1;
+  _ => True; // standalone expression, bug if put as 1st branch, because of grammar s-r conflict, i.e. thinking it is a standalone-case
+}  
+
+
+}
