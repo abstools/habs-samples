@@ -3,7 +3,7 @@ module Arith;
 
 {
 
- Int i = 3/1/4;
+ Int i = truncate(3/1/4);
  println(toString(i==0));
 
 }

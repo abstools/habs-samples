@@ -1,7 +1,7 @@
 module UpcastingInt;
 
 {
-  Int i = 3/4;
+  Int i = truncate(3/4);
   Rat x = i;
   println(toString(x == 0));
 }

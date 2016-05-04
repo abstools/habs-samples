@@ -14,7 +14,7 @@ def List<Pair<Int, Bool>> changeToFalse(Int j, Int n, Int last, Int offset) = ch
 
 def List<Pair<Int, Bool>> changeToFalse_(Int j, Int n, Int last, Int offset, List<Pair<Int,Bool>> acc) = 
     if (j <= last) 
-    then changeToFalse_(j+2*n, n, last, offset, Cons(Pair((j - offset) / 2, False), acc))
+    then changeToFalse_(j+2*n, n, last, offset, Cons(Pair(truncate((j - offset) / 2), False), acc))
     else acc;
 
 
