@@ -1,0 +1,9 @@
+module BugTypeVariables;
+
+
+def A h<A,B>(A a1, B b) = let (A upped) = b in upped; // MUST FAIL TO TYPECHECK, since it cannot be upped A - b distinct
+
+
+{
+  println(toString(h(False,True)));
+}
