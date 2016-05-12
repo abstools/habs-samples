@@ -1,0 +1,40 @@
+module CaseStatement;
+
+interface I {
+  Unit m(); 
+}
+
+class C implements I {
+ Int attr = 3;
+ 
+ Unit m() {
+  case (3>0) {
+    True => println(toString(True));
+    _ => println(toString(False));
+  }
+  Int x = 3;
+  Int y = 0;
+  case (x>y) {
+    True => println(toString(True));
+    _ => println(toString(False));   
+  }
+  case (attr>0) {
+    True => println(toString(True));
+    _ => println(toString(False));      
+  }
+  case (attr>y) {
+    True => {println(toString(True));
+             attr = attr+1;
+             y = y+1;
+            }
+    _ => println(toString(False));
+  }
+  println(toString(attr==4));
+  println(toString(y==1));
+ }
+}
+
+{
+  I o = new local C();
+  o.m();
+}
