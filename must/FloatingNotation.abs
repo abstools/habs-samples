@@ -1,0 +1,15 @@
+module FloatingNotation;
+
+{
+  Rat normalNotation = 3 / 2;
+  Rat floatNotation = 3.5;
+  Int x = 3;
+
+  Rat sum = normalNotation + floatNotation + x;
+
+  println(toString(normalNotation));
+  println(toString(floatNotation));
+  println(toString(sum));
+  println(toString(truncate(sum)));
+
+}
