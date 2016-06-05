@@ -18,5 +18,5 @@ def Int sum_(List<Int> x, Int acc) = case x {
    i = i+1;
  }
  Int y = sum(x);                // sum it
- println(toString(y == 5000050000));
+ assert y == 5000050000;
 }

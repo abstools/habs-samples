@@ -7,5 +7,5 @@ def Int fib(Int n) = case n {
 };
 
 {
- println(toString(fib(32)==2178309));
+ assert fib(32)==2178309;
 }

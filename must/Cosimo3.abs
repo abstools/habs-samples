@@ -33,5 +33,5 @@ class C implements I {
  Fut<Int> f1 = o ! m1();
  o ! m3();
  Int res = f1.get;
- println(toString(res == 4));
+ assert res == 4;
 }

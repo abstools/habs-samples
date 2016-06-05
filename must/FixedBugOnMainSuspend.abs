@@ -11,5 +11,5 @@ module FixedBugOnMainSuspend;
       suspend;
       i = i-1;
   }
-  println(toString(True));
+  println("ok");
 }

@@ -5,6 +5,6 @@ type MInt = Maybe<Int>;
 type Error<A> = Either<Exception, A>;
 
 {
-  println(toString(True));
+  println("ok");
 
 }

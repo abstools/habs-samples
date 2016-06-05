@@ -7,7 +7,7 @@ interface I {
 class C implements I {
    Unit m() {
      Int res = this.h1(True);
-     println(toString(res == 3));
+     assert res == 3;
    }
    Int h1(Bool x) {
      Fut<Int> f1 = this ! h2(3);

@@ -4,6 +4,6 @@ module Arith;
 {
 
  Int i = truncate(3/1/4);
- println(toString(i==0));
+ assert i==0;
 
 }

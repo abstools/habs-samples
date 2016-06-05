@@ -11,7 +11,7 @@ class C() implements I {
         Fut<Unit> f1 = this ! dec();
         Fut<Unit> f2 = this ! dec();
         await f1? & x==y-1 & f2? & f1? & y==x+1;
-        println(toString(True));
+        println("ok");
     }
     Unit dec() {
         x = x-1;

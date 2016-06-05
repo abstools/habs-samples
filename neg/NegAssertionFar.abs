@@ -1,0 +1,23 @@
+module NegAssertionFar;
+
+interface I { Unit m(); }
+
+class C implements I{
+  Unit run() {
+    assert (1==0);
+  }
+  Unit m() {
+
+  }
+}
+
+{
+  I o = new C();
+
+  // we have to call a method to be sure that the run has finished
+  Fut<Unit> f = o ! m();
+  await f?;
+
+  println("fail");
+
+}

@@ -28,9 +28,9 @@ def BTree<Int> t() = Node(Node(Node(Node(Node(Node(Node(Node(Node(Node(Leaf(-100
   Pair<Bool,Int> res3 = find(t(),9665174,0);
   Pair<Bool,Int> res4 = find(t(),9665175,0);
   Int res5 = sum(t());
-  println(toString(res1));
-  println(toString(res2));
-  println(toString(res3));
-  println(toString(res4));
-  println(toString(res5));
+  assert res1 == Pair(True, 5);
+  assert res2 == Pair(False, 10);
+  assert res3 == Pair(True, 10);
+  assert res4 == Pair(False, 10);
+  assert res5 == 6137075864;
 }

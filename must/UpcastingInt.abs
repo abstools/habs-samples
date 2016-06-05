@@ -3,5 +3,5 @@ module UpcastingInt;
 {
   Int i = truncate(3/4);
   Rat x = i;
-  println(toString(x == 0));
+  assert x == 0;
 }

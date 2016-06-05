@@ -3,7 +3,7 @@ module ExceptionCase;
 exception Exception1(Int);
 exception Exception2(Bool, Int);
 
-data Mplo<A,B> = Mplo(Int, Exception)
+data Mplo<A,B> = Mpla(Int, Exception)
                | Mpli(A);
 
 def Bool f(Exception e) = case e {
@@ -19,15 +19,15 @@ def Bool g() = case Exception1(2) {
     _ => False;
    };
 
-def Mplo<Int,Bool> h(Int i) = Mplo(i, Exception1(i+1));
+def Mplo<Int,Bool> h(Int i) = Mpla(i, Exception1(i+1));
 
 {
  Bool b1 = f(Exception1(1));
  Bool b2 = f(Exception2(False, 2));
- println(toString(b1 == True));
- println(toString(b2 == False));
+ assert b1 == True;
+ assert b2 == False;
  Bool b3 = g();
- println(toString(b3 == True));
+ assert b3 == True;
  Mplo<Int,Bool> j  = h(4);
- println(toString(j == Mplo(4, Exception1(5))));
+ assert j == Mpla(4, Exception1(5));
 }

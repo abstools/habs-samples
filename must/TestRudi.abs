@@ -7,5 +7,5 @@ def Int f() = let (Int s) = 3 in
     };
 
 {
-  println(toString(f() == f()));
+  assert f() == f();
 }

@@ -8,21 +8,21 @@ module PromiseSimple;
 
  Maybe<Int> before = p.pro_try;
 
- println(toString(before == Nothing));
+ assert before == Nothing;
 
  p.pro_give(3);
 
  Maybe<Int> after = p.pro_try;
 
- println(toString(not(after == Nothing)));
+ assert not(after == Nothing);
 
  Fut<Int> p_ = p;
 
- println(toString(p_==p));
+ assert p_==p;
 
  await p?;
 
  Int x = p_.get;
 
- println(toString(x==3));
+ assert x==3;
 }

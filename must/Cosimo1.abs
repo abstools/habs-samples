@@ -25,5 +25,5 @@ class C implements I {
  Fut<Unit> f1 = o ! m1();
  o ! m2();
  await f1?;
- println(toString(True));
+ println("ok");
 }

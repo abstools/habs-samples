@@ -9,7 +9,7 @@ class C implements I {
     Fut<Unit> f;
     Unit run() {
         await f?;
-        println("True");
+        println("ok");
     }
     Unit set_f() {
         f = this ! dummy();

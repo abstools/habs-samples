@@ -31,5 +31,5 @@ class C implements I {
      i=i+1;
  }
  Int res = f.get;
- println(toString(res));
+ assert res == 1346269;
 }

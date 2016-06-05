@@ -22,7 +22,7 @@ class CTest implements Test {
         Int i = fi.get;
     } catch {
         MyException(s) => {result = s; 
-                           println(toString(s == result));}
+                           assert s == result;}
     }
 }
 

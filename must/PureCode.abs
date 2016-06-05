@@ -20,11 +20,11 @@ def List<Pair<Int, Bool>> changeToFalse_(Int j, Int n, Int last, Int offset, Lis
 
 {
   Int y = f(3);
-  println(toString(y==11));
+  assert y==11;
 
   Either<Int,Bool> e1 = Left(3);
-  println(toString(getLeft(e1) == 3));
+  assert getLeft(e1) == 3;
 
   Either<Bool,Bool> e2 = Right(True);
-  println(toString(either(e2)));
+  assert either(e2);
 }

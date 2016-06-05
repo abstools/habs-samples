@@ -8,8 +8,8 @@ module InferenceNum;
 
   Rat j = i + 3; // will not work since it does not know that i is Int to upcast it
 
-  println(toString(x == 4));
-  println(toString(j == 4));
+  assert x == 4;
+  assert j == 4;
 
 }
 

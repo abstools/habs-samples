@@ -26,11 +26,11 @@ class C implements I {
 
     Fut<Unit> f = o ! m1();     //inc
 
-    println(toString(True));
+    println("ok1");
 
     o.m1();                     //inc
 
     await f?;
 
-    println(toString(True));
+    println("ok2");
 }

@@ -40,11 +40,11 @@ IArray a3 = new local CArray(100);
 Fut<Int> f2 = a2!sum();
 Int x = a3.sum();
 
-println(toString(x ==4500));
+assert x ==4500;
 
 await f2?;
 x = f2.get;
-println(toString(x==450));
+assert x==450;
 
 
 }

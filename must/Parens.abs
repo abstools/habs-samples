@@ -5,7 +5,7 @@ def Int g() = 3 + 4 * 5;
 
 {
   Int i = f();
-  println(toString(i == 35));
+  assert i == 35;
   Int j = g();
-  println(toString(j == 23));
+  assert j == 23;
 }

@@ -7,6 +7,6 @@ def Int g(Int x) = x;
 def Bool h() = f(0) == g(3);
 
 {
-  println(toString(h()));
+  assert h();
 
 }

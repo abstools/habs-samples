@@ -8,7 +8,7 @@ class C implements I {
     Int x = 0;
     Unit m() {
         await (x==2);           // will block on this.x
-        println(toString(True));
+        println("fail");
     }
 }
 
@@ -16,5 +16,5 @@ class C implements I {
 {
     I o = new local C();
     o.m();
-    println(toString(True));
+    println("fail");
 }

@@ -9,28 +9,28 @@ class C implements I {
  
  Unit m() {
   case (3>0) {
-    True => println(toString(True));
-    _ => println(toString(False));
+    True => assert True;
+    _ => assert False;
   }
   Int x = 3;
   Int y = 0;
   case (x>y) {
-    True => println(toString(True));
-    _ => println(toString(False));   
+    True => assert True;
+    _ => assert False;   
   }
   case (attr>0) {
-    True => println(toString(True));
-    _ => println(toString(False));      
+    True => assert True;
+    _ => assert False;      
   }
   case (attr>y) {
-    True => {println(toString(True));
+    True => {assert True;
              attr = attr+1;
              y = y+1;
             }
-    _ => println(toString(False));
+    _ => assert False;
   }
-  println(toString(attr==4));
-  println(toString(y==1));
+  assert attr==4;
+  assert y==1;
  }
 }
 

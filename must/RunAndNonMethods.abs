@@ -30,7 +30,7 @@ class C1 implements I {
       this!k();
   }
   Unit k() {
-      println(toString(True));
+      println("ok");
   }
 }
 

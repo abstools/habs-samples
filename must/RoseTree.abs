@@ -20,8 +20,8 @@ def Bool dfs_fun_(List<RoseTree<Int>> ts, Int v) = case ts {
   RoseTree<Int> t = RoseTree(1, list[RoseTree(2,Nil)]);
   Bool res1 = dfs_fun(t,2);
   Bool res2 = dfs_fun(t,3);
-  println(toString(res1));
-  println(toString(res2));
+  assert res1;
+  assert res2;
 }    
 
 

@@ -1,0 +1,14 @@
+module AwaitFalse;
+
+interface I {Unit m();}
+class C implements I {
+  Unit m() { 
+    await (1==0); 
+  }
+}
+
+{
+  I o = new C();
+  Fut<Unit> f = o!m();
+  await f?;
+}

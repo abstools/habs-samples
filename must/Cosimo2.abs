@@ -29,5 +29,5 @@ class C implements I {
  I o = new C();
  Fut<Int> f1 = o ! m1();
  Int res = f1.get;
- println(toString(res == 4));
+ assert res == 4;
 }

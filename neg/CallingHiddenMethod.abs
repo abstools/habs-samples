@@ -17,7 +17,7 @@ class C implements I {
  I o = new C();
  o ! m();                       // this is ok
  o ! m_();                         // this is wrong
- println(toString(True));
+ println("fail");
 }
 
 

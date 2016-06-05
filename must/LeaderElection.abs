@@ -62,7 +62,7 @@ class NodeImpl(Int id) implements Node {
       nodes = Cons(n,nodes);
       id = id +1;
    } 
-   println(toString(first != null));
+   assert first != null;
    first!setNextNode(n);
    first!electLeader();
 }
