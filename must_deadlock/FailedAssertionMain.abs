@@ -1,4 +1,4 @@
-module NegAssertionMain;
+module FailedAssertionMain;
 
 {
   assert (1==0);

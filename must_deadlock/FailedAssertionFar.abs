@@ -1,4 +1,4 @@
-module NegAssertionNear;
+module FailedAssertionFar;
 
 interface I { Unit m(); }
 
@@ -12,7 +12,7 @@ class C implements I{
 }
 
 {
-  I o = new local C();
+  I o = new C();
 
   // we have to call a method to be sure that the run has finished
   Fut<Unit> f = o ! m();
