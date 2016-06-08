@@ -1,0 +1,11 @@
+module ShortAwaitDuration;
+
+interface I { Unit m(); }
+class C implements I{ Unit m() { assert False; } }
+
+{
+  I o = new local C();
+  o ! m();
+  await duration(1/2,1/2); // 0.5 secs
+  // the other process will execute the false assertion
+}

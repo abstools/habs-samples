@@ -1,0 +1,6 @@
+module LongAwaitDuration;
+
+{
+  await duration(10,10); // 10 secs
+  // the test framework will timeout
+}
