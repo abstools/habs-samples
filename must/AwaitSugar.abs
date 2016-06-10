@@ -1,0 +1,43 @@
+module AwaitSugar;
+
+interface I { Unit inc(Int j); Int getter(Unit d); }
+
+class C implements I {
+  Int i = 0;
+  Int res = 0;
+  Unit dummy = Unit;
+  Unit inc(Int j) { 
+      i = i+j;
+    }
+  Int getter(Unit d) {
+    Unit dummy_ = d;
+    await this!getter_(d);
+    await this!getter_(dummy);
+    res = await this!getter_(dummy_);
+    return res;
+  }
+  Int getter_(Unit dummy) { return i; }
+}
+
+{
+  I o = new C();
+
+  Int x = 100;
+  Int increment = 3;
+
+  while (x>0) {
+    await o!inc(increment);
+    await o!inc(1);
+    x=x-1;
+  }
+
+  Fut<Int> f = o ! getter(Unit);
+  Int i = f.get;
+  assert i == 400;
+
+
+  Int j = await o!getter(Unit);
+  assert j == 400;
+
+
+}
