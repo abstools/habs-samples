@@ -1,7 +1,0 @@
-module DupVars;
-{
-    String s = "Hello";
-    {
-        String s = "World";
-    }
-}

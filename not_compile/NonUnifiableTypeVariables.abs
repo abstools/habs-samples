@@ -1,0 +1,9 @@
+module NonUnifiableTypeVariables;
+
+
+def A h<A,B>(A a1, B b) = let (A upped) = b  // MUST FAIL TO TYPECHECK, since it cannot be upped A - b distinct
+                          in upped;
+
+{
+
+}

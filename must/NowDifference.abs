@@ -1,8 +1,0 @@
-module NowDifference;
-
-{
-  Time t1 = now();
-  duration(1,1);
-  Time t2 = now();
-  assert t2-t1 > t1-t2;
-}

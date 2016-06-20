@@ -1,0 +1,30 @@
+module PromiseSimple;
+
+{
+
+ Fut<Int> p;
+
+ p = pro_new;
+
+ Maybe<Int> before = p.pro_try;
+
+ assert before == Nothing;
+
+ p.pro_give(3);
+
+ Maybe<Int> after = p.pro_try;
+
+ assert not(after == Nothing);
+
+ Fut<Int> p_ = p;
+
+ assert p_==p;
+
+ await p?;
+
+ Int x = p_.get;
+
+ assert x==3;
+
+ println("ok");
+}

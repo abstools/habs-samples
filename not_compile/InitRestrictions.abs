@@ -1,0 +1,28 @@
+module InitRestrictions;
+
+interface I {}
+
+class C implements I {
+  {
+    I o1 = this;
+    I o2 = o1;
+
+    this.run(); // synchronous call not allowed
+
+    await True; // await not allowed
+
+    await duration(0,0) // not allowed
+
+    Fut<Unit> f = this ! run(); // THIS IS allowed 
+
+    f.get; // but this is NOT allowed
+  }
+    
+  Unit run() { 
+      // everything allowed as a usual block
+  }
+}
+
+{
+  
+}

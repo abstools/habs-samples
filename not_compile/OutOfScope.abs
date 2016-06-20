@@ -1,0 +1,8 @@
+module OutOfScope;
+
+{
+ {
+  String s = "mplo";
+ }
+ s = "mpli";
+}

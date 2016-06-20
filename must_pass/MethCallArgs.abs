@@ -1,0 +1,27 @@
+module MethCallArgs;
+
+interface I {
+  Unit m(Int a1, Bool a2);
+}
+
+class C { 
+   {
+   this!m(3,True); // pure args
+   Int f1 = 3;
+   this!m(f1,True); // impure args
+   Bool f2 = True;
+   this!m(f1,f2); // also impure
+  } 
+  Unit m(Int a1, Bool a2) {
+   this.m(3,True); // pure args
+   Int f1 = 3;
+   this.m(f1,True); // impure args
+   Bool f2 = True;
+   this.m(f1,f2); // also impure
+  }
+}
+
+{
+  println("ok");
+
+}

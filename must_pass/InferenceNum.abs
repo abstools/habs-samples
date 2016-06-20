@@ -1,0 +1,19 @@
+module InferenceNum;
+
+{
+  _ i = 1; // inference breaks subtyping of Int :< Rat
+  // if it was Int i = 1; it would be fine
+
+  Int x = i + 3;
+
+  Rat j = i + 3; // will not work since it does not know that i is Int to upcast it
+
+  assert x == 4;
+  assert j == 4;
+
+  println("ok");
+}
+
+// An example of an ambiguous inference
+
+

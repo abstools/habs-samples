@@ -1,0 +1,23 @@
+module CallingNonMethod;
+
+interface I { Unit m(); }
+
+class C implements I {
+    Unit m() {
+        
+        this ! m() ; // this is ok
+        this ! m_(); // this is ok
+        
+        I o = this;
+        o!m(); // this is ok
+        o!m_(); // this is wrong
+    }
+
+    Unit m_() { }
+}
+
+{
+  
+}
+
+  

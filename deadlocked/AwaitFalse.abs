@@ -1,0 +1,16 @@
+module AwaitFalse;
+
+// the test framework will make it timeout
+
+interface I {Unit m();}
+class C implements I {
+  Unit m() { 
+    await (1==0);  // this process is blocked
+  }
+}
+
+{
+  I o = new C();
+  Fut<Unit> f = o!m();
+  await f?;
+}

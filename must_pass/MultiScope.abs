@@ -1,0 +1,18 @@
+module MultiScope;
+
+
+{
+
+ {
+     Int x = 1;
+     x = x+1;
+     assert x==2;
+ }
+ {  
+     Bool x= True;
+     x = False;
+     assert not(x);
+     println("ok1");
+ }
+ println("ok2");
+}

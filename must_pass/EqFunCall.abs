@@ -1,0 +1,12 @@
+module EqFunCall;
+
+def Int f(Int x) = x+3;
+
+def Int g(Int x) = x;
+
+def Bool h() = f(0) == g(3);
+
+{
+  assert h();
+  println("ok");
+}

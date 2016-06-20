@@ -1,0 +1,8 @@
+module ConversionRatInt;
+
+{
+  Int i = truncate(3/4);
+  Rat x = i;
+  assert x == 0;
+  println("ok");
+}

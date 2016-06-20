@@ -1,0 +1,9 @@
+module TypeSynonym;
+
+type MInt = Maybe<Int>; 
+
+type Error<A> = Either<Exception, A>;
+
+{
+  println("ok");
+}

@@ -1,0 +1,27 @@
+module FutureField5;
+
+interface I {
+    Unit set_f();
+}
+
+
+class C implements I {
+    Fut<Unit> f;
+    Unit run() {
+        println("ok2");
+        await f?;
+        println("ok3");
+    }
+    Unit set_f() {
+        f = this ! dummy();
+    }
+    Unit dummy() {
+    }
+}
+
+
+{
+ I o = new local C();  
+ o.set_f();
+ println("ok1");
+}

@@ -1,5 +1,0 @@
-module Fail1;
-
-interface I { } class C implements I { }
-
-{ Bool testresult = True; I i = new local C();}

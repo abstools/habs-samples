@@ -1,0 +1,9 @@
+module NowDifference;
+
+{
+  Time t1 = now();
+  duration(1/10,1/10); // 0.1 secs
+  Time t2 = now();
+  assert t2-t1 > t1-t2;
+  println("ok");
+}

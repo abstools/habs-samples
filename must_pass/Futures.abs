@@ -1,0 +1,31 @@
+module Futures;
+
+interface I {
+	Int m(Int n, Int m);
+	}
+
+class Class1(Int p1, Int p2, Int p3) implements I {
+	Int x = 0;
+	{	
+			x = 1;
+	        x = x +1;
+	}
+	Int m(Int n, Int m) {
+		return (n+m);
+	}
+}
+
+{
+    I o1 = new Class1(1,2,3);
+    I o2 = new Class1(3,4,5);
+    Fut<Int> f1 = o1 ! m(3,4);
+    await f1?;
+    Int res1 = f1.get;
+    assert res1 == 7;
+    Fut<Int> f2 = o2 ! m(4,5);
+    await f2?;
+    Int res2 = f2.get;
+    assert res2 == 9;
+    assert f1 != f2;
+    println("ok");
+}
