@@ -1,6 +1,6 @@
 module LongAwaitDuration;
 
 {
-  await duration(10,10); // 10 secs
+  await duration(5,15) & duration(11,12); // same as await duration(11,12), so 11 secs
   // the test framework will timeout
 }

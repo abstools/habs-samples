@@ -6,7 +6,7 @@ class C implements I{ Unit m() { println("should not be printed"); } }
 {
   I o = new local C();
   o ! m();
-  duration(10,10); // 10 secs
+  duration(11,11); // 11 secs
   // the test framework will timeout,
   // so the other process will not manage to execute
 }
