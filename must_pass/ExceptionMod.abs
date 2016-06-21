@@ -17,6 +17,7 @@ catch {
 }
 finally {
    x=x+1;
+   println(toString(x));
    assert x==5;
    println("ok2");
 }

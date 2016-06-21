@@ -23,9 +23,9 @@ class CTest implements Test {
     } catch {
         MyException(s) => {result = s; 
                            assert s == result;
-                           println("ok");
+                           println("ok1");
                            }
     }
-    println("ok");
+    println("ok2");
 }
 

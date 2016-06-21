@@ -1,0 +1,7 @@
+ok
+Ping: hello
+Pong: hello, Ping, True
+Ping: HowAreYou
+Pong: Fine
+Ping: ByePong
+Pong: Bye, Ping, True

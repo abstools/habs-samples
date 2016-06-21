@@ -6,12 +6,12 @@ data X = A | B;
 def Bool f() = let (X x) = A in
 	let (X y) = B in
 		case x {
-          y => False;
+      y => False;
 	 	  x => True;
  	};
 	
 
 {
-  println(toString(f()));
-
+  assert f();
+  println("ok");
 }

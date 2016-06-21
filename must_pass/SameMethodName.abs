@@ -25,4 +25,5 @@ class C2 implements I2 {
    I2 o2 = new C2();
    o1 ! m();
    o2 ! m();
+   println("ok");
 }     
