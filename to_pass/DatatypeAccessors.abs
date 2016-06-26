@@ -1,0 +1,23 @@
+module DatatypeAccessors;
+
+//export A,B,b1,b2,c1,c2;
+
+// unfortunately, in ABS distinct data constructors cannot share accessor names (like Haskell)
+data D = A(Int a1, Bool a2)
+       | B(Bool b1, Int b2)
+       | C;
+
+{
+  D a = A(3, True);
+  D b = B(False,3);
+  assert(a1(a)==b2(b));
+
+  try {
+    println(toString(a1(b))); // should fail, because B does not have a1 accessor
+  }
+  catch {
+    RecSelError(str) => println(str);
+  }
+
+  println("ok2");
+}
