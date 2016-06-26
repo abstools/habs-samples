@@ -1,6 +1,6 @@
 module DatatypeAccessors;
 
-//export A,B,b1,b2,c1,c2;
+export D,A,B,C,a1,a2,b1,b2;
 
 // unfortunately, in ABS distinct data constructors cannot share accessor names (like Haskell)
 data D = A(Int a1, Bool a2)
