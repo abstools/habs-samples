@@ -11,7 +11,7 @@ class C implements I {
 
     await True; // await not allowed
 
-    await duration(0,0) // not allowed
+    await duration(0,0); // not allowed
 
     Fut<Unit> f = this ! run(); // THIS IS allowed 
 
