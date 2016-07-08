@@ -1,9 +1,10 @@
 module RandomZero;
 
 {
+  random(1000000); // ignored
   Int x = random(1);
   assert x==0;
-  random(-1);
+  Int y = random(-1);
   assert y==0;
   Int z = random(0);
   assert z == 0;
