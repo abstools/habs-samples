@@ -2,13 +2,13 @@ module Sequences;
 export *;
 
 interface Sequence {
-    Int next();
+    Int next_();
 }
 
 class NaturalNumbers implements Sequence {
     Int i = 0;
 
-    Int next() {
+    Int next_() {
         i = i + 1;
         return i;
     }
@@ -18,7 +18,7 @@ class Factorials implements Sequence {
     Int seq = 1;
     Int fact = 1;
 
-    Int next() {
+    Int next_() {
         fact = seq * fact;
         seq = seq + 1;
         return fact;
@@ -29,7 +29,7 @@ class Fibonacci implements Sequence {
     Int prev = 0;
     Int prevPrev = 1;
 
-    Int next() {
+    Int next_() {
         Int n = prev + prevPrev;
         prevPrev = prev;
         prev = n;
@@ -40,7 +40,7 @@ class Fibonacci implements Sequence {
 class Squares implements Sequence {
     Int seq = 0;
 
-    Int next() {
+    Int next_() {
         seq = seq + 1;
         return seq * seq;
     }
@@ -49,7 +49,7 @@ class Squares implements Sequence {
 class Cubes implements Sequence {
     Int seq = 0;
 
-    Int next() {
+    Int next_() {
         seq = seq + 1;
         return seq * seq * seq;
     }
@@ -72,7 +72,7 @@ class Cubes implements Sequence {
         Int i = 0;
         s = head(sequences);
         while (i < 10000) {
-            s ! next();
+            s ! next_();
             i = i + 1;
         }
 
