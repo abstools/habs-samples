@@ -1,0 +1,23 @@
+module FieldDecls;
+
+def Int f(Int x) = x+1;
+
+interface I { }
+
+class C(Int z) {
+  Int x = f(1);
+  Int y = let (Int x) = 1 in x+this.x+z+1;
+  Fut<Int> g;
+  Int k = this.x;
+  I o;
+  I o_ = null;
+  {
+    assert y==5;
+    println("ok");
+    return Unit;
+  }
+}
+
+{
+  new local C(1);
+}
