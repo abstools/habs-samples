@@ -14,7 +14,7 @@ class C implements I {
     await this!getter_(d);
     await this!getter_(dummy);
     res = await this!getter_(dummy_);
-    return res;
+    return await this!getter_(dummy_);
   }
   Int getter_(Unit dummy) { return i; }
 }
