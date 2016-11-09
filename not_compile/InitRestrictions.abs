@@ -16,6 +16,8 @@ class C implements I {
     Fut<Unit> f = this ! run(); // THIS IS allowed 
 
     f.get; // but this is NOT allowed
+
+    [Cost: 5] skip;  // cost annotations are not allowed because they block
   }
     
   Unit run() { 
