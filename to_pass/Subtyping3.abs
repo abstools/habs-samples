@@ -1,0 +1,136 @@
+module Subtyping3;
+
+data BinTree<A> = Leaf
+                | Node(BinTree<A>,A,BinTree<A>);
+
+interface I1 {}
+
+interface I2 extends I1 {}
+
+def Bool f(I2 i2, I1 i1) = i2 == i1;
+
+def Bool g(List<I2> i2, List<I1> i1) = i2 == i1;
+
+def Bool h(List<I2> i2, List<I2> i1) = i2 == i1;
+
+def List<A> cons<A>(A a1, List<A> a2) = Cons(a1,a2);
+
+def List<I1> cons_(I1 a1, List<I2> a2) = Cons(a1,a2);
+
+def List<I1> cons__(I2 a1, List<I1> a2) = Cons(a1,a2);
+
+def Bool j(Int i, Rat r) = i < r;
+
+def Rat k(Int a, Rat b, Int c, Rat d, Rat e) = a+b+c+d+e;
+
+def Int l(Int a, Int b) = a+b;
+
+def Rat m(Int a, Int b) = a+b;
+
+def Int n(Int a, Rat b) = a%b%3;
+
+def A id_<A>(A a) = a;
+
+def I1 o(I1 a) = id_(a);
+
+def I1 p(I2 a) = o(a);
+
+def BinTree<Int> leaf() = Leaf;
+
+def BinTree<Rat> someTree1() = Node(Leaf,4,Leaf);
+
+def BinTree<Rat> someTree2() = Node(Leaf,3+5,Node(Leaf,3+4,Leaf));
+
+
+def BinTree<Rat> someTree3() = Node(leaf(),3+5,Node(leaf(),3+4,Leaf));
+
+def BinTree<Rat> r() = if True then leaf() else someTree2();
+
+def Rat s() = case 3 {
+                x => l(3,4); 
+                y => 3/5;
+              };
+
+def Int t(I2 a) = let (I1 b) = a in 3;
+
+def I2 u() = null;
+
+def Bool v() = null == null;
+
+def Bool w(I2 a) = a == null && (let (I1 b) = a in b == null);
+
+def Int len<A>(List<A> l) = case l {
+  Nil => 0;
+  Cons(_,l_) => 1 + len(l_);
+};
+
+def A const<A,B>(A a, B b) = a;
+
+//def Int const_() = const(3,null);
+
+//def Int z() = len(Cons(null,Cons(null,Nil)));
+
+def Rat truncate_(Rat x) = truncate(x);
+
+interface I {
+  Int m1(Rat y, Unit k);
+}
+
+class C(Rat k) implements I {
+  Int y = 3;
+  Rat x = 4 + y;
+
+  Int m1(Rat y, Unit k) {
+    return truncate(y);
+  }
+
+  Unit m2() {
+    Int z = 3;
+    y = y + 1;
+    y = y + z;
+  }
+  Rat m3() {
+    Int y = 3;
+    return y;
+  }
+}
+
+// class C {
+//   {
+//     List<I> x = Cons(this,Cons(null,Nil));
+//   }
+//}
+
+{
+  Int i = 3;
+  I o;
+  o = new local C(i);  
+  o = new C(4);
+  o.m1(3, Unit);
+  o.m1(i, Unit);
+  o!m1(i+3,Unit);
+  await o!m1(i+i,Unit);
+  i = o.m1(i, Unit);
+  Int j = o.m1(i, Unit);
+  //Rat j_ = o.m1(i, Unit);
+  Rat r = 4/2 + i;
+  Fut<Int> f = o!m1(i+i,Unit);
+  r = f.get;
+  r = i + r;
+  r = r - i;
+  r = random(i);
+  i = r % i;
+  Rat m = r % i;
+  m = 3;
+  m = 3 % 4;
+  m = r % i;
+  BinTree<Int> l = leaf();
+  Bool x = l == someTree2();
+  x = l == Leaf;
+  Int x_ = (len(Cons(i,Cons(r,Nil))));
+  Unit y = Unit;
+  List<Int> z = list[1,2,3];
+  List<Int> z_ = list[1,2,x_];
+
+  println("ok");
+}

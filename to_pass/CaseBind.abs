@@ -11,7 +11,15 @@ def Bool f() = let (X x) = A in
  	};
 	
 
+def Bool g() = let (Pair<Int, Int> a) = Pair(5, 5) in
+                let (Int x) = 5 in
+  case a {
+    Pair(x, x) => False; 
+    Pair(x, y) => True; 
+  };
+
 {
   assert f();
+  assert g();
   println("ok");
 }
